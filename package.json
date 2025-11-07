@@ -10,8 +10,6 @@
     "test:ui": "vitest --ui"
   },
   "dependencies": {
-    "@types/gif.js": "^0.2.5",
-    "gif.js": "^0.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "zustand": "^4.4.7"
