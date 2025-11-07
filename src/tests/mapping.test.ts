@@ -23,7 +23,6 @@ describe('mapping', () => {
     });
 
     it('should weight green more heavily', () => {
-      const gray = luminance(0.5, 0.5, 0.5);
       const green = luminance(0, 1, 0);
       const red = luminance(1, 0, 0);
       expect(green).toBeGreaterThan(red);

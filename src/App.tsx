@@ -11,7 +11,7 @@ import './App.css';
 
 export function App() {
   const fileInputRef = useRef<HTMLInputElement>(null);
-  const { params, updateParam, applyPreset, setImage, image, setVideoFile, videoFile, canvasWidth, canvasHeight } = useKnitStore();
+  const { params, updateParam, applyPreset, setImage, image, setVideoFile, videoFile } = useKnitStore();
   const [isExporting, setIsExporting] = useState(false);
 
   /**
@@ -182,7 +182,6 @@ export function App() {
 
       video.onloadedmetadata = () => {
         const duration = video.duration;
-        const frameInterval = 1 / fps;
 
         // Process frames
         const processFrame = (time: number) => {

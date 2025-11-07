@@ -43,25 +43,12 @@ function srgbToLinear(c: number): number {
 }
 
 /**
- * Convert linear RGB to sRGB (gamma correction)
- */
-function linearToSrgb(c: number): number {
-  return c <= 0.0031308 ? c * 12.92 : 1.055 * Math.pow(c, 1 / 2.4) - 0.055;
-}
-
-/**
  * Convert RGB tuple from sRGB to linear
  */
 function toLinear(rgb: RGB): RGB {
   return [srgbToLinear(rgb[0]), srgbToLinear(rgb[1]), srgbToLinear(rgb[2])];
 }
 
-/**
- * Convert RGB tuple from linear to sRGB
- */
-function toSrgb(rgb: RGB): RGB {
-  return [linearToSrgb(rgb[0]), linearToSrgb(rgb[1]), linearToSrgb(rgb[2])];
-}
 
 /**
  * Calculate Euclidean distance between two RGB colors in linear space
@@ -101,7 +88,7 @@ export function nearestBrandColor(rgb: RGB): RGB {
  * @param mix Mix amount (0 = original, 1 = full brand color)
  * @returns Always returns the nearest palette color (strict enforcement)
  */
-export function applyPaletteMix(rgb: RGB, mix: number): RGB {
+export function applyPaletteMix(rgb: RGB, _mix: number): RGB {
   // Always use strict palette quantization - return nearest palette color
   // This ensures only the three palette colors are ever used
   return nearestBrandColor(rgb);

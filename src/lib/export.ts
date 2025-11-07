@@ -70,7 +70,7 @@ export async function exportGIF(
   width: number = 1080,
   height: number = 1080
 ): Promise<void> {
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     const gif = new GIF({
       workers: 2,
       quality: 10,
